@@ -1,13 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 
 function App() {
 
   return (
-    <div className='bg-amber-500 w-full h-48'>
-      <h2>EPFM Dashboard</h2>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/epfm-dashboard/' element={<div>homeee</div>} />
+        <Route path='/epfm-dashboard/testing' element={<div>TESTTTING</div>} />
+      </Routes>
+    </BrowserRouter>
+
+    // <div className='bg-amber-500 w-full h-48'>
+    //   <h2>EPFM Dashboard</h2>
+    // </div>
   )
 }
 
