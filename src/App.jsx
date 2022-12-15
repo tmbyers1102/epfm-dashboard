@@ -1,10 +1,10 @@
-import { HashRouter, BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, BrowserRouter, Routes, Route, hashHistory } from 'react-router-dom'
 import './App.css'
 
 function App() {
 
   return (
-    <HashRouter basename="/epfm-dashboard">
+    <HashRouter history={hashHistory} basename="/epfm-dashboard">
       <Routes>
         <Route path='/' element={<div>homeee</div>} />
         <Route path='/testing' element={<div>TESTTTING</div>} />
