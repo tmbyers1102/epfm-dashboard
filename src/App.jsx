@@ -5,13 +5,12 @@ function App() {
 
   return (
     <>
-    <BrowserRouter basename="/epfm-dashboard">
+    
       <Routes>
         <Route path='/' element={<div>homeee</div>} />
         <Route path='/testing' element={<div>TESTTTING</div>} />
       </Routes>
-    </BrowserRouter>
-    {/* <HashRouter>
+]    {/* <HashRouter>
       <Routes>
         <Route path='/epfm-dashboard/' element={<div>homeee</div>} />
         <Route path='/epfm-dashboard/testing/' element={<div>TESTTTING</div>} />
