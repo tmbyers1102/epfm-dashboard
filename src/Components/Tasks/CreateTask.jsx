@@ -40,8 +40,8 @@ function CreateTask() {
     };
     return (
         <div class="w-full">
-            <form class="bg-white border-2 border-full border-blue-600 shadow-xl rounded px-8 pt-6 pb-8 mb-4">
-                <h1 className='text-2xl font-bold'>Create Task</h1>
+            <form class="bg-white border-2 border-full border-blue-600 shadow-xl rounded-xl px-8 pt-6 pb-8 mb-4">
+                <h1 className='text-2xl font-bold text-center'>Create Task</h1>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2  text-start" for="username">
                         Name
@@ -52,6 +52,7 @@ function CreateTask() {
                         type="text"
                         placeholder="Task Name"
                         ref={nameRef}
+                        required
                     ></input>
                 </div>
                 <div class="mb-4">

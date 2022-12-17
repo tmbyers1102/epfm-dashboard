@@ -4,6 +4,7 @@ import Airtable from "airtable";
 import CreateTask from './Tasks/CreateTask';
 import Tasks from './Tasks/Tasks';
 import Checkins from './Checkins/Checkins';
+import TaskSliderButton from './Sliders/TaskSliderButton';
 
 const base = new Airtable({ apiKey: import.meta.env.VITE_API_KEY }).base(import.meta.env.VITE_BASE_ID)
 
@@ -26,6 +27,18 @@ const Home = () => {
 
     return (
         <>
+            {/* <div class="h-screen flex">
+                <div class="bg-gray-600 w-64">
+                    <Checkins />
+                </div>
+                <div class="flex-1 flex overflow-hidden">
+                    <div class="flex-1 overflow-y-scroll">
+                        <Tasks />
+                    </div>
+                </div>
+            </div> */}
+            {/* <TaskSliderButton />
+            <TaskSlider /> */}
             <div className='flex justify-center'>
                 <div className='w-1/2'>
                     <Checkins />
@@ -35,8 +48,13 @@ const Home = () => {
                     <Tasks />
                 </div>
                 {/* <CreateTask /> */}
-
             </div>
+        </>
+    )
+};
+
+export default Home;
+
             {/* <div className="grid grid-cols-4 items-center justify-center m-3 gap-4 flex">
                 <div className='flex justify-center w-full'>
                     <CreateButton />
@@ -48,8 +66,3 @@ const Home = () => {
                             />
                         ))}
             </div> */}
-        </>
-    )
-};
-
-export default Home;

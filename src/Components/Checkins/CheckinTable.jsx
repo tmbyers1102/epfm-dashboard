@@ -33,7 +33,7 @@ const CheckinTable = () => {
                                             scope="col"
                                             className="text-center px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
                                         >
-                                            Task
+                                            Checkin
                                         </th>
                                         <th
                                             scope="col"

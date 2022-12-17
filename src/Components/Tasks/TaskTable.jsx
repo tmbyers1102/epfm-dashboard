@@ -2,11 +2,20 @@ import React, { useEffect, useState } from 'react'
 // import TaskCard from "./TaskCard";
 import Airtable from "airtable";
 import TaskTableRow from './TaskTableRow';
+import SpinnerComponent from '../Animations/SpinnerComponent';
+import TaskSliderButton from '../Sliders/TaskSliderButton';
 
 const base = new Airtable({ apiKey: import.meta.env.VITE_API_KEY }).base(import.meta.env.VITE_BASE_ID)
 
 const TaskTable = () => {
     const [tasks, setTasks] = useState([])
+    const [loading, setLoading] = useState(true)
+    
+    useEffect(() => {
+        if(tasks?.length > 0) {
+           setLoading(false)
+        }
+    }, [tasks])
 
     useEffect(() => {
         base("tasks")
@@ -22,69 +31,76 @@ const TaskTable = () => {
             });
     }, []);
 
-    return (
-        <>
-            <div className="flex flex-col">
-                <div className="overflow-x-auto">
-                    <div className="w-full inline-block align-middle">
-                        <div className="overflow-hidden border rounded-md">
-                            <table className="min-w-full divide-y divide-gray-200">
-                                <thead className="bg-gray-50">
-                                    <tr>
-                                        <th
-                                            scope="col"
-                                            className="text-center px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
-                                        >
-                                            Task
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="text-center px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
-                                        >
-                                            Ticket
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="text-center px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
-                                        >
-                                            Due Date
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="text-center hidden 2xl:block px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
-                                        >
-                                            Scheduled Start
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="text-center hidden 2xl:block px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
-                                        >
-                                            Scheduled End
-                                        </th>
-                                        <th
-                                            scope="col"
-                                            className="text-center hidden 2xl:block px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
-                                        >
-                                            Send to Cal
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200">
-                                    {tasks.map((task) => (
-                                        <TaskTableRow
-                                            key={task.id}
-                                            task={task}
-                                        />
-                                    ))}
-                                </tbody>
-                            </table>
+    if (loading) {
+        return (
+            <div class="flex mt-6 pt-6 w-full mx-auto">
+                <SpinnerComponent />
+            </div>
+        )
+    } else {
+        return (
+            <>
+                <div className="flex flex-col">
+                    <div className="overflow-x-auto">
+                        <div className="w-full inline-block align-middle">
+                            <div className="overflow-hidden border rounded-md">
+                                <table className="min-w-full divide-y divide-gray-200">
+                                    <thead className="bg-gray-50">
+                                        <tr>
+                                            <th
+                                                scope="col"
+                                                className="flex items-center text-center px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                                            >
+                                                Task
+                                            </th>
+                                            <th
+                                                scope="col"
+                                                className="text-center px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                                            >
+                                                Ticket
+                                            </th>
+                                            <th
+                                                scope="col"
+                                                className="text-center px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                                            >
+                                                Due Date
+                                            </th>
+                                            <th
+                                                scope="col"
+                                                className="text-center hidden 2xl:block px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
+                                            >
+                                                Scheduled Start
+                                            </th>
+                                            <th
+                                                scope="col"
+                                                className="text-center hidden 2xl:block px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
+                                            >
+                                                Scheduled End
+                                            </th>
+                                            <th
+                                                scope="col"
+                                                className="text-center hidden 2xl:block px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
+                                            >
+                                                Send to Cal
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-gray-200">
+                                        {tasks.map((task) => (
+                                            <TaskTableRow
+                                                key={task.id}
+                                                task={task}
+                                            />
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-  
-        </>
-    )
+            </>
+        )
+    }
 };
 
 export default TaskTable;
