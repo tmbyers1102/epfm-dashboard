@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, setState } from 'react'
 // import TaskCard from "./TaskCard";
 import Airtable from "airtable";
 import TaskTableRow from './TaskTableRow';
@@ -6,6 +6,7 @@ import SpinnerComponent from '../Animations/SpinnerComponent';
 import TaskSliderButton from '../Sliders/TaskSliderButton';
 
 const base = new Airtable({ apiKey: import.meta.env.VITE_API_KEY }).base(import.meta.env.VITE_BASE_ID)
+
 
 const TaskTable = () => {
     const [tasks, setTasks] = useState([])
@@ -49,37 +50,37 @@ const TaskTable = () => {
                                         <tr>
                                             <th
                                                 scope="col"
-                                                className="flex items-center text-center px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                                                className="flex items-center text-center px-3 py-1 text-xs font-bold text-left text-gray-500 uppercase "
                                             >
                                                 Task
                                             </th>
                                             <th
                                                 scope="col"
-                                                className="text-center px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                                                className="text-center px-3 py-1 text-xs font-bold text-left text-gray-500 uppercase "
                                             >
                                                 Ticket
                                             </th>
                                             <th
                                                 scope="col"
-                                                className="text-center px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                                                className="text-center px-3 py-1 text-xs font-bold text-left text-gray-500 uppercase "
                                             >
                                                 Due Date
                                             </th>
                                             <th
                                                 scope="col"
-                                                className="text-center hidden 2xl:block px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
+                                                className="text-center hidden 2xl:block px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                             >
                                                 Scheduled Start
                                             </th>
                                             <th
                                                 scope="col"
-                                                className="text-center hidden 2xl:block px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
+                                                className="text-center hidden 2xl:block px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                             >
                                                 Scheduled End
                                             </th>
                                             <th
                                                 scope="col"
-                                                className="text-center hidden 2xl:block px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
+                                                className="text-center hidden 2xl:block px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                             >
                                                 Send to Cal
                                             </th>

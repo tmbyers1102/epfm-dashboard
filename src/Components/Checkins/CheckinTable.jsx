@@ -31,37 +31,37 @@ const CheckinTable = () => {
                                     <tr>
                                         <th
                                             scope="col"
-                                            className="text-center px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                                            className="flex text-center px-3 py-1 text-xs font-bold text-left text-gray-500 uppercase "
                                         >
                                             Checkin
                                         </th>
                                         <th
                                             scope="col"
-                                            className="text-center px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                                            className="text-center px-3 py-1 text-xs font-bold text-left text-gray-500 uppercase "
                                         >
                                             Ticket
                                         </th>
                                         <th
                                             scope="col"
-                                            className="text-center px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                                            className="text-center px-3 py-1 text-xs font-bold text-left text-gray-500 uppercase "
                                         >
                                             Due Date
                                         </th>
                                         <th
                                             scope="col"
-                                            className="text-center hidden 2xl:block px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
+                                            className="text-center hidden 2xl:block px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                         >
                                             Scheduled Start
                                         </th>
                                         <th
                                             scope="col"
-                                            className="text-center hidden 2xl:block px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
+                                            className="text-center hidden 2xl:block px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                         >
                                             Scheduled End
                                         </th>
                                         <th
                                             scope="col"
-                                            className="text-center hidden 2xl:block px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
+                                            className="text-center hidden 2xl:block px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                         >
                                             Send to Cal
                                         </th>

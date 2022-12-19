@@ -5,6 +5,7 @@ import CreateTask from './Tasks/CreateTask';
 import Tasks from './Tasks/Tasks';
 import Checkins from './Checkins/Checkins';
 import TaskSliderButton from './Sliders/TaskSliderButton';
+import TaskEditTable from './Tasks/TaskEditTable';
 
 const base = new Airtable({ apiKey: import.meta.env.VITE_API_KEY }).base(import.meta.env.VITE_BASE_ID)
 
@@ -46,8 +47,8 @@ const Home = () => {
                 <div className='h-screen border-r border-full border-indigo-600 my-3'></div>
                 <div className='w-1/2'>
                     <Tasks />
+                    {/* <TaskEditTable /> */}
                 </div>
-                {/* <CreateTask /> */}
             </div>
         </>
     )

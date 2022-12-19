@@ -3,7 +3,7 @@ import Airtable from "airtable";
 
 const base = new Airtable({ apiKey: import.meta.env.VITE_API_KEY }).base(import.meta.env.VITE_BASE_ID)
 
-function CreateTask() {
+function CreateTask({setState}) {
     const nameRef = useRef();
     const dueDateRef = useRef();
     const scheduledStartRef = useRef();
@@ -25,7 +25,7 @@ function CreateTask() {
         const client_visible = true;
         const new_client = ["reca1BIsqZ4IMpsHY"];
         const Notes = notesRef.current.value;
-        const send_to_calendar = true;
+        const send_to_calendar = false;
 
         base('Tasks').create(
             { Name, due_date, scheduled_start, scheduled_end, Status, new_client, client_visible, send_to_calendar },
@@ -35,15 +35,20 @@ function CreateTask() {
                     console.log(notesRef.current.value);
                     return;
                 }
-                prompt('Created record', record.getId());
+                //alert(this.state.storedItemName);
+                //alert('record created');
+                //prompt('Created record', record.getId());
+                location.reload()
+                console.log('refresh function worked!')
             });
+
     };
     return (
         <div class="w-full">
-            <form class="bg-white border-2 border-full border-blue-600 shadow-xl rounded-xl px-8 pt-6 pb-8 mb-4">
-                <h1 className='text-2xl font-bold text-center'>Create Task</h1>
+            <form class="bg-white border-2 border-full border-blue-600 shadow-xl rounded-xl px-3 pt-6 pb-8 mb-4">
+                {/* <h1 className='text-2xl font-bold text-center'>Create Task</h1> */}
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2  text-start" for="username">
+                    <label class="block text-gray-700 text-sm font-bold mb-2  text-start" htmlFor="username">
                         Name
                     </label>
                     <input
@@ -56,7 +61,7 @@ function CreateTask() {
                     ></input>
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2 text-start" for="username">
+                    <label class="block text-gray-700 text-sm font-bold mb-2 text-start" htmlFor="username">
                         Notes
                     </label>
                     <textarea
@@ -74,8 +79,8 @@ function CreateTask() {
                     ></input> */}
                 </div>
                 <div className="md:flex w-full justify-around gap-2">
-                    <div class="mb-4 w-full">
-                        <label class="block text-gray-700 text-sm font-bold mb-2 text-start" for="username">
+                    <div class="mb-4 w-1/4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2 text-start" htmlFor="username">
                             Due Date
                         </label>
                         <input
@@ -86,8 +91,8 @@ function CreateTask() {
                             ref={dueDateRef}
                         ></input>
                     </div>
-                    <div class="mb-4 w-full">
-                        <label class="block text-gray-700 text-sm font-bold mb-2 text-start" for="username">
+                    <div class="mb-4 w-1/3">
+                        <label class="block text-gray-700 text-sm font-bold mb-2 text-start" htmlFor="username">
                             Scheduled Start
                         </label>
                         <input
@@ -98,8 +103,8 @@ function CreateTask() {
                             ref={scheduledStartRef}
                         ></input>
                     </div>
-                    <div class="mb-4 w-full">
-                        <label class="block text-gray-700 text-sm font-bold mb-2 text-start" for="username">
+                    <div class="mb-4 w-1/3">
+                        <label class="block text-gray-700 text-sm font-bold mb-2 text-start" htmlFor="username">
                             Scheduled End
                         </label>
                         <input

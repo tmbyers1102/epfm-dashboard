@@ -14,20 +14,20 @@ const TaskSliderButton = () => {
             <div className="flex">
 
                 <button onClick={() => setState({ isTaskSliderOpen: true })}>
-                    <div class="flex items-center h-10 rounded-lg px-3 bg-blue-600 hover:bg-blue-700 border-solid border-2 border-sky-500 mx-3">
+                    <div className="flex items-center h-10 rounded-lg px-3 bg-blue-600 hover:bg-blue-700 border-solid border-2 border-sky-500 mx-3">
                         New Task
                     </div>
                 </button>
             </div>
             <SlidingPane
                 className="bg-blue-800 opacity-90 hover:opacity-100"
-                closeIcon=<div class="hover:bg-indigo-400 rounded-full p-3"><h3>X</h3></div>
+                closeIcon={<div class="hover:bg-indigo-400 rounded-full p-3"><h3>X</h3></div>}
                 overlayClassName="some-custom-overlay-class"
                 isOpen={state.isTaskSliderOpen}
-                title=<div className=''><h2>title</h2></div>
+                title=<div className='text-blue-600 text-center'><h2>Create A Task</h2></div>
                 //subtitle="Optional subtitle."
                 from="left"
-                width="800px"
+                width="700px"
                 onRequestClose={() => {
                 // triggered on "<" on left top click or on outside click
                     setState({ isTaskSliderOpen: false });
@@ -35,7 +35,7 @@ const TaskSliderButton = () => {
             >
                 {/* put content here */}
                 <div className=''>
-                    <CreateTask />
+                    <CreateTask setState={setState}/>
                 </div>
 
             </SlidingPane>
