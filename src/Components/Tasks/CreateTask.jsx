@@ -41,8 +41,13 @@ function CreateTask({setState}) {
                 location.reload()
                 console.log('refresh function worked!')
             });
-
     };
+    // create default next check date of tomorrow
+    const date = new Date();
+    const futureDate = date.getDate() + 1;
+    date.setDate(futureDate);
+    const tomorrowDateValue = date.toLocaleDateString('en-CA');
+
     return (
         <div class="w-full">
             <form class="bg-white border-2 border-full border-blue-600 shadow-xl rounded-xl px-3 pt-6 pb-8 mb-4">
@@ -89,6 +94,7 @@ function CreateTask({setState}) {
                             type="date"
                             placeholder="Task Due Date"
                             ref={dueDateRef}
+                            defaultValue={tomorrowDateValue}
                         ></input>
                     </div>
                     <div class="mb-4 w-1/3">

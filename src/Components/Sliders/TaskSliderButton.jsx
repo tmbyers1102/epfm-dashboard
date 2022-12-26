@@ -20,9 +20,9 @@ const TaskSliderButton = () => {
                 </button>
             </div>
             <SlidingPane
-                className="bg-blue-800 opacity-90 hover:opacity-100"
+                className="bg-gradient-to-br from-blue-900 to-teal-700"
                 closeIcon={<div class="hover:bg-indigo-400 rounded-full p-3"><h3>X</h3></div>}
-                overlayClassName="some-custom-overlay-class"
+                overlayClassName=""
                 isOpen={state.isTaskSliderOpen}
                 title=<div className='text-blue-600 text-center'><h2>Create A Task</h2></div>
                 //subtitle="Optional subtitle."

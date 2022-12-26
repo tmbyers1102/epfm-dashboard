@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const TaskTableRow = ({ task }) => {
+const TaskTableRow = ({ task, selectedClient }) => {
     var due_date = task.fields.due_date
     const abr_due_date = due_date.substring(due_date.length - 5)
 
@@ -21,9 +21,12 @@ const TaskTableRow = ({ task }) => {
 
     return (
         <>
-            <tr className='hover:bg-gray-100'>
+            <tr className={selectedClient ? (selectedClient === String(task.fields.new_client) ? "hover:bg-gray-100" : "hidden") : "hover:bg-blue-300"} >
                 <td className="text-start px-1 py-1 text-xs font-medium text-gray-800 whitespace-nowrap">
                     {task.fields.Name}
+                </td>
+                <td className="text-start px-1 py-1 text-xs font-medium text-gray-800 whitespace-nowrap">
+                    {task.fields.client_from_new_client}
                 </td>
                 <td className="px-1 py-1 text-sm text-gray-800 whitespace-nowrap">
                     <a href={task.fields.ticket_url} target="_blank">

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Component } from 'react'
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
+import CreateCheckin from '../Checkins/CreateCheckin';
 
 const CheckingSliderButton = () => {
     const [state, setState] = useState({
@@ -13,20 +14,20 @@ const CheckingSliderButton = () => {
             <div className="flex">
 
                 <button onClick={() => setState({ isTaskSliderOpen: true })}>
-                    <div class="flex items-center h-10 rounded-lg px-3 bg-blue-600 hover:bg-blue-700 border-solid border-2 border-sky-500 mx-3">
+                    <div className="flex items-center h-10 rounded-lg px-3 bg-blue-600 hover:bg-blue-700 border-solid border-2 border-sky-500 mx-3">
                         New Checkin
                     </div>
                 </button>
             </div>
             <SlidingPane
-                className="bg-blue-800 opacity-90 hover:opacity-100"
-                closeIcon=<div class="hover:bg-indigo-400 rounded-full p-3"><h3>X</h3></div>
-                overlayClassName="some-custom-overlay-class"
+                className="bg-gradient-to-br from-blue-900 to-teal-700"
+                closeIcon={<div class="hover:bg-indigo-400 rounded-full p-3"><h3>X</h3></div>}
+                overlayClassName=""
                 isOpen={state.isTaskSliderOpen}
-                title=<div className=''><h2>title</h2></div>
+                title=<div className='text-blue-600 text-center'><h2>Create A Check-in</h2></div>
                 //subtitle="Optional subtitle."
                 from="right"
-                width="800px"
+                width="700px"
                 onRequestClose={() => {
                 // triggered on "<" on left top click or on outside click
                     setState({ isTaskSliderOpen: false });
@@ -34,7 +35,7 @@ const CheckingSliderButton = () => {
             >
                 {/* put content here */}
                 <div className=''>
-                    create checking form
+                    <CreateCheckin setState={setState} />
                 </div>
 
             </SlidingPane>

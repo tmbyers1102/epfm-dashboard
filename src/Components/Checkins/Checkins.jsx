@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import CheckinTable from './CheckinTable';
 
-const Checkins = () => {
+const Checkins = ({selectedClient}) => {
 
     return (
         <>
             <div className='justify-center p-1 pr-2'>
-                <CheckinTable />
+                <CheckinTable selectedClient={selectedClient} />
             </div>
         </>
     )

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const CheckinTableRow = ({ checkin }) => {
+const CheckinTableRow = ({ checkin, selectedClient }) => {
     var check_date = checkin.fields.next_check_date
     const abr_check_date = check_date.substring(check_date.length - 5)
 
@@ -19,11 +19,22 @@ const CheckinTableRow = ({ checkin }) => {
         )
     }}
 
+    var conditionalClientClass = [];
+    {if (selectedClient) {
+        conditionalClientClass = `selectedClient === String(checkin.fields.checkin_client) ? "hover:bg-blue-100" : "hidden"`
+    } else {
+        conditionalClientClass = "hover:bg-gray-100"
+    }}
+
     return (
         <>
-            <tr className='hover:bg-gray-100'>
+            <tr className={selectedClient ? (selectedClient === String(checkin.fields.checkin_client) ? "hover:bg-blue-100" : "hidden") : "hover:bg-blue-200"}>
+            {/* <tr className=""> */}
                 <td className="text-start px-1 py-1 text-xs font-medium text-gray-800 whitespace-nowrap">
                     {checkin.fields.name}
+                </td>
+                <td className="text-start px-1 py-1 text-xs font-medium text-gray-800 whitespace-nowrap">
+                    {checkin.fields.checkin_client_string}
                 </td>
                 <td className="px-1 py-1 text-sm text-gray-800 whitespace-nowrap">
                     <a href={checkin.fields.ticket_url} target="_blank">

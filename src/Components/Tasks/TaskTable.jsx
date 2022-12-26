@@ -8,9 +8,10 @@ import TaskSliderButton from '../Sliders/TaskSliderButton';
 const base = new Airtable({ apiKey: import.meta.env.VITE_API_KEY }).base(import.meta.env.VITE_BASE_ID)
 
 
-const TaskTable = () => {
+const TaskTable = ({selectedClient}) => {
     const [tasks, setTasks] = useState([])
     const [loading, setLoading] = useState(true)
+
     
     useEffect(() => {
         if(tasks?.length > 0) {
@@ -22,8 +23,8 @@ const TaskTable = () => {
         base("tasks")
             .select({ 
                 view: "Fake Tasks",
-                filterByFormula: `AND({client_from_new_client}='Made Up Lamps', {client_visible})`,
-                // filterByFormula: `{status}='Todo'`,
+                filterByFormula: `AND({Status}='Todo')`,
+                sort: [{field: 'due_date', direction: "asc"}]
             })
             .eachPage((records, fetchNextPage) => {
                 //console.log(records)
@@ -31,6 +32,7 @@ const TaskTable = () => {
                 fetchNextPage();
             });
     }, []);
+    
 
     if (loading) {
         return (
@@ -40,7 +42,7 @@ const TaskTable = () => {
         )
     } else {
         return (
-            <>
+            <>                
                 <div className="flex flex-col">
                     <div className="overflow-x-auto">
                         <div className="w-full inline-block align-middle">
@@ -53,6 +55,12 @@ const TaskTable = () => {
                                                 className="flex items-center text-center px-3 py-1 text-xs font-bold text-left text-gray-500 uppercase "
                                             >
                                                 Task
+                                            </th>
+                                            <th
+                                                scope="col"
+                                                className="text-center px-3 py-1 text-xs font-bold text-left text-gray-500 uppercase "
+                                            >
+                                                Client
                                             </th>
                                             <th
                                                 scope="col"
@@ -87,11 +95,25 @@ const TaskTable = () => {
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-gray-200">
+                                        {/* {tasks.map((values) => {
+                                            const{id, Name} = values;
+                                            return(
+                                                <>
+                                                    <div className='bg-red-400' key={id}>
+                                                        <p>{tasks.id}|{id}</p>
+                                                    </div>
+                                                </>
+                                            )
+                                        })} */}
+
                                         {tasks.map((task) => (
-                                            <TaskTableRow
-                                                key={task.id}
-                                                task={task}
-                                            />
+                                            <>
+                                                    <TaskTableRow
+                                                        key={task.id}
+                                                        task={task}
+                                                        selectedClient={selectedClient}
+                                                    />
+                                            </>
                                         ))}
                                     </tbody>
                                 </table>

@@ -4,7 +4,7 @@ import CheckinTableRow from './CheckinTableRow';
 
 const base = new Airtable({ apiKey: import.meta.env.VITE_API_KEY }).base(import.meta.env.VITE_BASE_ID)
 
-const CheckinTable = () => {
+const CheckinTable = ({selectedClient}) => {
     const [checkins, setCheckins] = useState([])
     useEffect(() => {
         base("Checkins")
@@ -34,6 +34,12 @@ const CheckinTable = () => {
                                             className="flex text-center px-3 py-1 text-xs font-bold text-left text-gray-500 uppercase "
                                         >
                                             Checkin
+                                        </th>
+                                        <th
+                                            scope="col"
+                                            className="text-center px-3 py-1 text-xs font-bold text-left text-gray-500 uppercase "
+                                        >
+                                            Client
                                         </th>
                                         <th
                                             scope="col"
@@ -72,6 +78,7 @@ const CheckinTable = () => {
                                         <CheckinTableRow
                                             key={checkin.id}
                                             checkin={checkin}
+                                            selectedClient={selectedClient}
                                         />
                                     ))}
                                 </tbody>
