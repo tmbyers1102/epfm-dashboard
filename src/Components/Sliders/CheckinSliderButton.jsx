@@ -46,6 +46,7 @@ const CheckingSliderButton = () => {
                 from="bottom"
                 width="200px"
                 onRequestClose={() => setState({ isPaneOpenLeft: false })}
+                className=""
             >
                 <div>And I am pane content on left.</div>
             </SlidingPane>

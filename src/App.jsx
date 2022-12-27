@@ -5,6 +5,7 @@ import Home from './Components/Home';
 import CheckingSliderButton from './Components/Sliders/CheckinSliderButton';
 import TaskSliderButton from './Components/Sliders/TaskSliderButton';
 import Airtable from "airtable";
+import OtherSliderButton from './Components/Sliders/OtherSliderButton';
 
 const base = new Airtable({ apiKey: import.meta.env.VITE_API_KEY }).base(import.meta.env.VITE_BASE_ID)
 
@@ -42,7 +43,7 @@ function App() {
                         <button
                             onClick={() =>
                                 filterResult()
-                            } className='w-36 m-2 p-3 bg-blue-700 text-xs text-white rounded-lg hover:bg-blue-800 focus:ring-2 ring-blue-100 ring-inset'>
+                            } className='w-36 m-2 p-3 bg-blue-700 text-xs text-white rounded-lg hover:bg-blue-800 focus:ring-2 ring-blue-100 ring-inset selected:bg-red-200'>
                               All
                         </button>
                     {clients.map((client) => (
@@ -57,6 +58,7 @@ function App() {
             <TaskSliderButton />
           </div>
       </div>
+      <OtherSliderButton />
       <Home selectedClient={selectedClient} />
     </div>
   )
