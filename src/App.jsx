@@ -41,16 +41,16 @@ function App() {
 
   return (
     <div className=''>
-      <div className='h-20 md:h-18 shadow-lg w-full bg-blue-600 text-white'>
+      <div className='h-20 md:h-18 shadow-lg w-full bg-blue-600 text-white flex md:block'>
             <Menu as="div" className="relative inline-block text-left md:hidden p-3 w-full">
-              <div className='flex gap-2'>
-                <Menu.Button className="w-1/8 justify-center rounded-lg bg-blue-700 px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+              <div className=''>
+                <Menu.Button className="justify-center rounded-lg bg-blue-700 px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="text-white w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                   </svg>
                 </Menu.Button>
-                <button className='p-3 bg-blue-700 rounded-lg flex-initial w-full'>New Checkin</button>
-                <button className='p-3 bg-blue-700 rounded-lg flex-initial w-full'>New Task</button>
+                {/* <button className='p-3 bg-blue-700 rounded-lg flex-initial w-full'>New Checkin</button>
+                <button className='p-3 bg-blue-700 rounded-lg flex-initial w-full'>New Task</button> */}
               </div>
 
               <Transition
@@ -122,9 +122,9 @@ function App() {
                 </Menu.Items>
               </Transition>
             </Menu>
-          <div className='hidden md:flex items-center justify-between p-3'>
+          <div className='flex items-center justify-between p-3'>
             <CheckingSliderButton />
-            <div className='flex justify-around'>
+            <div className='hidden md:flex justify-around'>
                         <button
                             onClick={() =>
                                 filterResult()

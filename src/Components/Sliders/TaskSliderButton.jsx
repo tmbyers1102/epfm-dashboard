@@ -14,7 +14,7 @@ const TaskSliderButton = () => {
             <div className="flex">
 
                 <button onClick={() => setState({ isTaskSliderOpen: true })}>
-                    <div className="flex items-center h-10 rounded-lg px-3 bg-blue-600 hover:bg-blue-700 border-solid border-2 border-sky-500 mx-3">
+                    <div className="flex items-center h-10 rounded-lg px-3 bg-blue-600 hover:bg-blue-700 border-solid border-2 border-sky-500 mx-3 whitespace-nowrap">
                         New Task
                     </div>
                 </button>
