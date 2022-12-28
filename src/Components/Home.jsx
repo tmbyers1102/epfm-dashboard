@@ -32,11 +32,11 @@ const Home = ({selectedClient}) => {
         <>
             {/* <h1>Selected client: {selectedClient}</h1> */}
             <div className='flex justify-center'>
-                <div className='hidden'>
+                <div className='w-1/2'>
                     <CheckinTable selectedClient={selectedClient} />
                 </div>
                 <div className='h-screen border-r border-full border-indigo-600 my-3'></div>
-                <div className='w-full'>
+                <div className='w-1/2'>
                     {/* <Tasks /> */}
                     <TaskTable selectedClient={selectedClient} />
                 </div>

@@ -36,32 +36,22 @@ const CheckinTableRow = ({ checkin, selectedClient }) => {
                 <td className="text-start px-1 py-1 text-xs font-medium text-gray-800 whitespace-nowrap">
                     {checkin.fields.checkin_client_string}
                 </td>
-                <td className="px-1 py-1 text-sm text-gray-800 whitespace-nowrap">
+                <td className="px-1 py-1 text-xs text-gray-800 whitespace-nowrap">
                     <a href={checkin.fields.ticket_url} target="_blank">
                         {linkButton}
                     </a>
                 </td>
-                <td className="px-1 py-1 text-sm text-gray-800 whitespace-nowrap">
+                <td className="px-1 py-1 text-xs text-gray-800 whitespace-nowrap">
                     {abr_check_date}
                 </td>
-                <td className="hidden 2xl:block px-1 py-1 text-sm text-gray-800 whitespace-nowrap">
-                    jonne62@gmail.com
+                <td className="hidden lg:table-cell px-1 py-1 text-xs text-gray-800 whitespace-nowrap">
+                    ###
                 </td>
-                <td className="hidden 2xl:block px-1 py-1 text-sm font-medium text-right whitespace-nowrap">
-                    <a
-                        className="text-green-500 hover:text-green-700"
-                        href="#"
-                    >
-                        Edit
-                    </a>
+                <td className="hidden lg:table-cell px-1 py-1 text-xs whitespace-nowrap">
+                    ##
                 </td>
-                <td className="hidden 2xl:block px-1 py-1 text-sm font-medium text-right whitespace-nowrap">
-                    <a
-                        className="text-red-500 hover:text-red-700"
-                        href="#"
-                    >
-                        Delete
-                    </a>
+                <td className="hidden lg:table-cell px-1 py-1 text-xs whitespace-nowrap">
+                    #
                 </td>
             </tr>   
         </>

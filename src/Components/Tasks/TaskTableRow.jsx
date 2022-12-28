@@ -28,32 +28,23 @@ const TaskTableRow = ({ task, selectedClient }) => {
                 <td className="text-start px-1 py-1 text-xs font-medium text-gray-800 whitespace-nowrap">
                     {task.fields.client_from_new_client}
                 </td>
-                <td className="px-1 py-1 text-sm text-gray-800 whitespace-nowrap">
+                <td className="px-1 py-1 text-xs text-gray-800 whitespace-nowrap">
                     <a href={task.fields.ticket_url} target="_blank">
                         {linkButton}
                     </a>
                 </td>
-                <td className="px-1 py-1 text-sm text-gray-800 whitespace-nowrap">
+                <td className="px-1 py-1 text-xs text-gray-800 whitespace-nowrap">
                     {abr_due_date}
                 </td>
-                <td className="px-1 py-1 text-sm text-gray-800 whitespace-nowrap">
-                    jonne62@gmail.com
+                <td className="hidden lg:table-cell px-1 py-1 text-xs text-gray-800 whitespace-nowrap">
+                        ###
                 </td>
-                <td className="px-1 py-1 text-sm font-medium text-right whitespace-nowrap">
-                    <a
-                        className="text-green-500 hover:text-green-700"
-                        href="#"
-                    >
-                        Edit
-                    </a>
+                <td className="hidden lg:table-cell px-1 py-1 text-xs whitespace-nowrap">
+                        ##
                 </td>
-                <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                    <a
-                        className="text-red-500 hover:text-red-700"
-                        href="#"
-                    >
-                        Delete
-                    </a>
+                <td className="hidden lg:table-cell px-6 py-1 text-xs whitespace-nowrap">
+
+                        #
                 </td>
             </tr>   
         </>

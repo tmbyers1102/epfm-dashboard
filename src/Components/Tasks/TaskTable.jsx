@@ -76,19 +76,19 @@ const TaskTable = ({selectedClient}) => {
                                             </th>
                                             <th
                                                 scope="col"
-                                                className="border-r border-full text-center px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
+                                                className="hidden lg:table-cell border-r border-full text-center px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                             >
                                                 Scheduled Start
                                             </th>
                                             <th
                                                 scope="col"
-                                                className="border-r border-full justify-center px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
+                                                className="hidden lg:table-cell border-r border-full justify-center px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                             >
                                                 Scheduled End
                                             </th>
                                             <th
                                                 scope="col"
-                                                className="text-center px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
+                                                className="hidden lg:table-cell text-center px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                             >
                                                 Send to Cal
                                             </th>
