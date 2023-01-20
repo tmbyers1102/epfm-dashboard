@@ -44,13 +44,13 @@ const CheckinTableRow = ({ checkin, selectedClient }) => {
                 <td className="px-1 py-1 text-xs text-gray-800 whitespace-nowrap">
                     {abr_check_date}
                 </td>
-                <td className="hidden lg:table-cell px-1 py-1 text-xs text-gray-800 whitespace-nowrap">
+                <td className="hidden 2xl:table-cell px-1 py-1 text-xs text-gray-800 whitespace-nowrap">
                     ###
                 </td>
-                <td className="hidden lg:table-cell px-1 py-1 text-xs whitespace-nowrap">
+                <td className="hidden 2xl:table-cell px-1 py-1 text-xs whitespace-nowrap">
                     ##
                 </td>
-                <td className="hidden lg:table-cell px-1 py-1 text-xs whitespace-nowrap">
+                <td className="hidden 2xl:table-cell px-1 py-1 text-xs whitespace-nowrap">
                     #
                 </td>
             </tr>   

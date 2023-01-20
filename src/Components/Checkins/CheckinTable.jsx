@@ -55,19 +55,19 @@ const CheckinTable = ({selectedClient}) => {
                                         </th>
                                         <th
                                             scope="col"
-                                            className="text-center hidden lg:table-cell px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
+                                            className="text-center hidden 2xl:table-cell px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                         >
                                             Scheduled Start
                                         </th>
                                         <th
                                             scope="col"
-                                            className="text-center hidden lg:table-cell px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
+                                            className="text-center hidden 2xl:table-cell px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                         >
                                             Scheduled End
                                         </th>
                                         <th
                                             scope="col"
-                                            className="text-center hidden lg:table-cell px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
+                                            className="text-center hidden 2xl:table-cell px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                         >
                                             Send to Cal
                                         </th>

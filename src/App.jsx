@@ -128,14 +128,15 @@ function App() {
                         <button
                             onClick={() =>
                                 filterResult()
-                            } className='w-36 m-2 p-3 bg-blue-700 text-xs text-white rounded-lg hover:bg-blue-800 focus:ring-2 ring-blue-100 ring-inset selected:bg-red-200'>
+                            } className='w-36 m-2 p-3 bg-blue-700 text-xs text-white rounded-lg hover:bg-blue-500 focus:bg-blue-800 focus:ring-2 ring-blue-100 ring-inset'>
                               All
                         </button>
-                    {clients.map((client) => (
+                    {clients.map((client, {active}) => (
                         <button key={client.id}
-                            onClick={() =>
-                                filterResult(client.id)
-                            } className='w-36 m-2 p-3 bg-blue-700 text-xs text-white rounded-lg hover:bg-blue-800 focus:ring-2 ring-blue-100 ring-inset'>
+                          as={Fragment}
+                          onClick={() => filterResult(client.id)}
+                          className='w-36 m-2 p-3 bg-blue-700 text-xs text-white rounded-lg hover:bg-blue-500 focus:bg-blue-800 focus:ring-2 ring-blue-100 ring-inset'
+                        >
                               {client.fields.Client}
                         </button>
                     ))}

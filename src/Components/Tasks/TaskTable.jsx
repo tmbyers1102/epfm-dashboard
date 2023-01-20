@@ -12,7 +12,6 @@ const TaskTable = ({selectedClient}) => {
     const [tasks, setTasks] = useState([])
     const [loading, setLoading] = useState(true)
 
-    
     useEffect(() => {
         if(tasks?.length > 0) {
            setLoading(false)
@@ -58,7 +57,7 @@ const TaskTable = ({selectedClient}) => {
                                             </th>
                                             <th
                                                 scope="col"
-                                                className="border-r border-full text-center px-3 py-1 text-xs font-bold text-left text-gray-500 uppercase "
+                                                className={ !selectedClient ? "border-r border-full text-center px-3 py-1 text-xs font-bold text-left text-gray-500 uppercase" : "hidden"}
                                             >
                                                 Client
                                             </th>
@@ -76,19 +75,19 @@ const TaskTable = ({selectedClient}) => {
                                             </th>
                                             <th
                                                 scope="col"
-                                                className="hidden lg:table-cell border-r border-full text-center px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
+                                                className="hidden 2xl:table-cell border-r border-full text-center px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                             >
                                                 Scheduled Start
                                             </th>
                                             <th
                                                 scope="col"
-                                                className="hidden lg:table-cell border-r border-full justify-center px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
+                                                className="hidden 2xl:table-cell border-r border-full justify-center px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                             >
                                                 Scheduled End
                                             </th>
                                             <th
                                                 scope="col"
-                                                className="hidden lg:table-cell text-center px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
+                                                className="hidden 2xl:table-cell text-center px-3 py-1 text-xs font-bold text-right text-gray-500 uppercase "
                                             >
                                                 Send to Cal
                                             </th>
