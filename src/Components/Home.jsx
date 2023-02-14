@@ -8,6 +8,9 @@ import TaskSliderButton from './Sliders/TaskSliderButton';
 import TaskEditTable from './Tasks/TaskEditTable';
 import TaskTable from './Tasks/TaskTable';
 import CheckinTable from './Checkins/CheckinTable';
+import ApiProductTest from './Tasks/APIProductTest';
+import TaskAPITable from './Tasks/TaskAPITable';
+import CheckinAPITable from './Checkins/CheckinAPITable';
 
 const base = new Airtable({ apiKey: import.meta.env.VITE_API_KEY }).base(import.meta.env.VITE_BASE_ID)
 
@@ -31,14 +34,17 @@ const Home = ({selectedClient}) => {
     return (
         <>
             {/* <h1>Selected client: {selectedClient}</h1> */}
+            {/* <div className='w-full bg-green-200 h-screen'>
+                <ApiProductTest />
+            </div> */}
             <div className='flex justify-center'>
                 <div className='w-1/2'>
-                    <CheckinTable selectedClient={selectedClient} />
+                    <CheckinAPITable selectedClient={selectedClient} />
                 </div>
                 <div className='h-screen border-r border-full border-indigo-600 my-3'></div>
                 <div className='w-1/2'>
-                    {/* <Tasks /> */}
-                    <TaskTable selectedClient={selectedClient} />
+                    <TaskAPITable selectedClient={selectedClient} />
+                    {/* <TaskTable selectedClient={selectedClient} /> */}
                 </div>
             </div>
         </>

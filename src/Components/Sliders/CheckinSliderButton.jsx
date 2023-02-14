@@ -24,7 +24,7 @@ const CheckingSliderButton = () => {
                 closeIcon={<div class="hover:bg-indigo-400 rounded-full p-3"><h3>X</h3></div>}
                 overlayClassName=""
                 isOpen={state.isTaskSliderOpen}
-                title=<div className='text-blue-600 text-center'><h2>Create A Check-in</h2></div>
+                title={<div className='text-blue-600 text-center'><h2>Create A Check-in</h2></div>}
                 //subtitle="Optional subtitle."
                 from="right"
                 width="700px"

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import TaskAPITable from './TaskAPITable';
 import TaskTable from './TaskTable';
 
 const Tasks = () => {
@@ -6,7 +7,8 @@ const Tasks = () => {
     return (
         <>
             <div className='justify-center p-1 pl-2'>
-                <TaskTable />
+                <div>jajaj</div>
+                {/* <TaskTable /> */}
             </div>
         </>
     )

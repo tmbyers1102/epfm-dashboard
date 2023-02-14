@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Component } from 'react'
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
+import CreateAPITask from '../Tasks/CreateAPITask';
 import CreateTask from '../Tasks/CreateTask';
 
 const TaskSliderButton = () => {
@@ -20,7 +21,7 @@ const TaskSliderButton = () => {
                 </button>
             </div>
             <SlidingPane
-                className="bg-gradient-to-br from-blue-900 to-teal-700"
+                className="bg-blue-100"
                 closeIcon={<div class="hover:bg-indigo-400 rounded-full p-3"><h3>X</h3></div>}
                 overlayClassName=""
                 isOpen={state.isTaskSliderOpen}
@@ -35,7 +36,7 @@ const TaskSliderButton = () => {
             >
                 {/* put content here */}
                 <div className=''>
-                    <CreateTask setState={setState}/>
+                    <CreateAPITask setState={setState}/>
                 </div>
 
             </SlidingPane>
