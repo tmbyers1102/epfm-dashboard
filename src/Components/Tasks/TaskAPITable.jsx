@@ -23,15 +23,7 @@ const TaskAPITable = ({selectedClient}) => {
 
     const getData = async () => {
         // tasks
-        // const taskResponse = await fetch('http://127.0.0.1:8000/api/tasks/')
-        const taskResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/tasks/', {
-            method:'GET',
-            mode: 'no-cors',
-            body:JSON.stringify(this.state),
-            headers:{
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
+        const taskResponse = await fetch('http://127.0.0.1:8000/api/tasks/')
         const taskData = await taskResponse.json()
         setTasks(taskData)
         // console.log(taskData)

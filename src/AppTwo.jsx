@@ -17,7 +17,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-function App() {
+function AppTwo() {
   const [clients, setClients] = useState([])
   const [selectedClient, setSelectedClient] = useState(null)
   const [projectClicked, setProjectClicked] = useState(false)
@@ -30,7 +30,8 @@ function App() {
 
     const getData = async () => {
         // clients
-        const clientResponse = await fetch('http://127.0.0.1:8000/api/clients/')
+        // const clientResponse = await fetch('http://127.0.0.1:8000/api/clients/')
+        const clientResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/clients/')
         const clientData = await clientResponse.json()
         setClients(clientData)
         // console.log(clientData)
@@ -156,7 +157,6 @@ function App() {
               </Transition>
             </Menu>
           <div className='flex items-center justify-between p-1 bg-blue-600 h-16'>
-            <CheckingSliderButton />
             <div className='hidden md:flex justify-around align-center'>
                     <button
                         onClick={() =>
@@ -202,24 +202,11 @@ function App() {
                         </button>
                     ))}
             </div>
-            <TaskSliderButton />
           </div>
       </div>
-      <OtherSliderButton />
-      {projectClicked ? (
-        <Projects setProjectClicked={setProjectClicked} />
-      ) : clientProfileClicked ? (
-        <ClientProfile
-          setClientProfileClicked={setClientProfileClicked}
-          selectedClient={selectedClient}
-          clients={clients}
-        />
-      ) : (
-        <Home selectedClient={selectedClient} />
-      )}
     </div>
   )
   
 }
 
-export default App
+export default AppTwo

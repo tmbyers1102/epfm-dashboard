@@ -34,10 +34,8 @@ class CreateAPITask extends React.Component {
         //         'Content-type': 'application/json; charset=UTF-8',
         //     },
         // })
-        // fetch('http://127.0.0.1:8000/api/tasks/', {
-        fetch('https://tmbyers3310.pythonanywhere.com/api/tasks/', {
+        fetch('http://127.0.0.1:8000/api/tasks/', {
             method:'POST',
-            mode: 'no-cors',
             body:JSON.stringify(this.state),
             headers:{
                 'Content-type': 'application/json; charset=UTF-8',

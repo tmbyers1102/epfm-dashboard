@@ -30,10 +30,8 @@ class CreateAPIUpdate extends React.Component {
     // Submit Form
     submitForm(){
 
-        // fetch('http://127.0.0.1:8000/api/updates/', {
-        fetch('https://tmbyers3310.pythonanywhere.com/api/updates/', {
+        fetch('http://127.0.0.1:8000/api/updates/', {
             method:'POST',
-            mode: 'no-cors',
             body:JSON.stringify(this.state),
             headers:{
                 'Content-type': 'application/json; charset=UTF-8',

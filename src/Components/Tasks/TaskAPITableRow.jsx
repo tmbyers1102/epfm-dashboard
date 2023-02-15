@@ -18,15 +18,7 @@ const TaskAPITableRow = ({ task, selectedClient }) => {
 
     const getData = async () => {
         // taskUpdates
-        // const taskUpdateResponse = await fetch('http://127.0.0.1:8000/api/updates/')
-        const taskUpdateResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/updates/', {
-            method:'GET',
-            mode: 'no-cors',
-            body:JSON.stringify(this.state),
-            headers:{
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
+        const taskUpdateResponse = await fetch('http://127.0.0.1:8000/api/updates/')
         const taskUpdateData = await taskUpdateResponse.json()
         setTaskUpdates(taskUpdateData)
     }
