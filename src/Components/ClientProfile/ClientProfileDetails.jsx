@@ -11,7 +11,14 @@ const ClientProfileDetails = ({client, selectedClient}) => {
   
       const getData = async () => {
           // clients
-          const clientContactResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/client_contacts/')
+          const clientContactResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/client_contacts/', {
+                method:'GET',
+                mode: 'no-cors',
+                // body:JSON.stringify(this.state),
+                headers:{
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
           const clientContactData = await clientContactResponse.json()
           setClientContacts(clientContactData)
           // console.log(clientData)

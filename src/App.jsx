@@ -31,7 +31,14 @@ function App() {
     const getData = async () => {
         // clients
         // const clientResponse = await fetch('http://127.0.0.1:8000/api/clients/')
-        const clientResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/clients/')
+        const clientResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/clients/', {
+          method:'GET',
+          mode: 'no-cors',
+          // body:JSON.stringify(this.state),
+          headers:{
+              'Content-type': 'application/json; charset=UTF-8',
+          },
+      })
         const clientData = await clientResponse.json()
         setClients(clientData)
         // console.log(clientData)

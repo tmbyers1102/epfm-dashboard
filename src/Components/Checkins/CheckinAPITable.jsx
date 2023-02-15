@@ -22,7 +22,14 @@ const CheckinAPITable = ({selectedClient}) => {
     const getData = async () => {
         // tasks
         // const checkinResponse = await fetch('http://127.0.0.1:8000/api/checkins/')
-        const checkinResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/checkins/')
+        const checkinResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/checkins/', {
+            method:'GET',
+            mode: 'no-cors',
+            // body:JSON.stringify(this.state),
+            headers:{
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
         const checkinData = await checkinResponse.json()
         setCheckins(checkinData)
         // console.log(checkinData)
