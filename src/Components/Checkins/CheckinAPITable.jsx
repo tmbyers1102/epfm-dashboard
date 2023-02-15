@@ -25,7 +25,8 @@ const CheckinAPITable = ({selectedClient}) => {
         const checkinResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/checkins/', {
             method:'GET',
             mode: 'no-cors',
-            // body:JSON.stringify(this.state),
+            // uncomment this
+            body:JSON.stringify(this.state),
             headers:{
                 'Content-type': 'application/json; charset=UTF-8',
             },

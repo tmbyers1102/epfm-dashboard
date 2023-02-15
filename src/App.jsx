@@ -34,7 +34,7 @@ function App() {
         const clientResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/clients/', {
           method:'GET',
           mode: 'no-cors',
-          // body:JSON.stringify(this.state),
+          body:JSON.stringify(this.state),
           headers:{
               'Content-type': 'application/json; charset=UTF-8',
           },

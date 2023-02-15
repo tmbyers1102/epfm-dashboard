@@ -22,7 +22,7 @@ const TaskAPITableRow = ({ task, selectedClient }) => {
         const taskUpdateResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/updates/', {
             method:'GET',
             mode: 'no-cors',
-            // body:JSON.stringify(this.state),
+            body:JSON.stringify(this.state),
             headers:{
                 'Content-type': 'application/json; charset=UTF-8',
             },

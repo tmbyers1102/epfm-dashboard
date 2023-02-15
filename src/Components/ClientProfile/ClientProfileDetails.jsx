@@ -14,7 +14,7 @@ const ClientProfileDetails = ({client, selectedClient}) => {
           const clientContactResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/client_contacts/', {
                 method:'GET',
                 mode: 'no-cors',
-                // body:JSON.stringify(this.state),
+                body:JSON.stringify(this.state),
                 headers:{
                     'Content-type': 'application/json; charset=UTF-8',
                 },

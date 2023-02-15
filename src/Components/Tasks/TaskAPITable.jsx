@@ -27,7 +27,7 @@ const TaskAPITable = ({selectedClient}) => {
         const taskResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/tasks/', {
             method:'GET',
             mode: 'no-cors',
-            // body:JSON.stringify(this.state),
+            body:JSON.stringify(this.state),
             headers:{
                 'Content-type': 'application/json; charset=UTF-8',
             },
