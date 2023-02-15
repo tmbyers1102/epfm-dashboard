@@ -30,8 +30,8 @@ function AppTwo() {
 
     const getData = async () => {
         // clients
-        // const clientResponse = await fetch('http://127.0.0.1:8000/api/clients/')
-        const clientResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/clients/')
+        // const clientResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/clients/')
+        const clientResponse = await fetch('http://127.0.0.1:8000/api/clients/')
         const clientData = await clientResponse.json()
         setClients(clientData)
         // console.log(clientData)
