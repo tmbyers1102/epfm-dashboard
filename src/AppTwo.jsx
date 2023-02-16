@@ -34,6 +34,7 @@ function AppTwo() {
         const clientResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/clients/', {
           crossDomain:true,
           method: 'GET',
+          mode: 'no-cors',
           headers: {'content-type': 'application/json'},
           // body:JSON.stringify(this.state),
         })
