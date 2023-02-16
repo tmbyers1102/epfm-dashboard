@@ -19,29 +19,51 @@ function classNames(...classes) {
 
 function AppTwo() {
   const [clients, setClients] = useState([])
+  const [error, setError] = useState(null)
   const [selectedClient, setSelectedClient] = useState(null)
   const [projectClicked, setProjectClicked] = useState(false)
   const [clientProfileClicked, setClientProfileClicked] = useState(false)
 
     // api stuff
     useEffect(() => {
-      getData()
+      fetch('https://tmbyers3310.pythonanywhere.com/api/clients/')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
+          );
+        }
+        return response.json();
+      })
+      .then((actualData) => {
+        setClients(actualData);
+        setError(null);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setData(null);
+      })
     }, [])
 
-    const getData = async () => {
-        // clients
-        // const clientResponse = await fetch('http://127.0.0.1:8000/api/clients/')
-        const clientResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/clients/', {
-          // crossDomain:true,
-          // method: 'GET',
-          mode: 'no-cors',
-          // headers: {'content-type': 'application/json'},
-          // body:JSON.stringify(this.state),
-        })
-        const clientData = await clientResponse.json()
-        setClients(clientData)
-        // console.log(clientData)
-    }
+    // useEffect(() => {
+    //   getData()
+    // }, [])
+
+    // const getData = async () => {
+    //     // clients
+    //     const clientResponse = await fetch('https://tmbyers3310.pythonanywhere.com/api/clients/', {mode: 'no-cors'}
+    //       // {
+    //       //   // crossDomain:true,
+    //       //   // method: 'GET',
+    //       //   mode: 'no-cors',
+    //       //   // headers: {'content-type': 'application/json'},
+    //       //   // body:JSON.stringify(this.state),
+    //       // }
+    //     );
+    //     const clientData = await clientResponse.json()
+    //     setClients(clientData)
+    //     // console.log(clientData)
+    // }
 
   // useEffect(() => {
   //     base("Clients At-A-Glance")
