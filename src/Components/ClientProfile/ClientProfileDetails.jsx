@@ -18,6 +18,10 @@ const ClientProfileDetails = ({client, selectedClient}) => {
       }
 
 
+    // zoho api
+    
+
+
     return (
         <>
 
@@ -64,7 +68,15 @@ const ClientProfileDetails = ({client, selectedClient}) => {
                         </div>
                     </div>
                     <div className='col-span-2 border rounded h-64'>
-                        <table class="border-collapse w-1/3 m-1">
+                        <div>
+                            <div className='flex font-bold w-full'>
+                                Zoho clients test
+                            </div>
+                            <div>
+                                client
+                            </div>
+                        </div>
+                        {/* <table class="border-collapse w-1/2 m-1 border-t mt-6">
                             <tbody>
                                 <tr>
                                     <td class="border-b border-slate-200 font-bold text-start p-1">Feed Manager</td>
@@ -79,7 +91,7 @@ const ClientProfileDetails = ({client, selectedClient}) => {
                                     <td class="border-b border-slate-200 text-start p-1">Detroit</td>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table> */}
                     </div>
                 </div>
                 {/* client badges */}
