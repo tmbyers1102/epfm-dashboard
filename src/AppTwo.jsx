@@ -35,7 +35,7 @@ function AppTwo() {
           crossDomain:true,
           method: 'GET',
           mode: 'no-cors',
-          headers: {'content-type': 'application/json'},
+          // headers: {'content-type': 'application/json'},
           // body:JSON.stringify(this.state),
         })
         const clientData = await clientResponse.json()
