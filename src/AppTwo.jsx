@@ -26,7 +26,7 @@ function AppTwo() {
 
     // api stuff
     useEffect(() => {
-      fetch('https://tmbyers3310.pythonanywhere.com/api/clients/')
+      fetch('https://tmbyers3310.pythonanywhere.com/api/clients/', {mode: 'no-cors'})
       .then((response) => {
         if (!response.ok) {
           throw new Error(
@@ -41,7 +41,7 @@ function AppTwo() {
       })
       .catch((err) => {
         setError(err.message);
-        setData(null);
+        setClients(null);
       })
     }, [])
 
